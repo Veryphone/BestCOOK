@@ -419,11 +419,7 @@ void Start()
 
 		Application.LoadLevel (Application.loadedLevel);
 
-#if UNITY_ANDROID 
-		(GoogleMobileAdsDemoScript.bannerWasLoaded) {
-			GoogleMobileAdsDemoScript._instance.bannerView.Hide ();
-		}
-#endif
+
 	}
 
 	public void NextLevel()
