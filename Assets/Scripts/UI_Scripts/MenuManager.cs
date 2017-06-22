@@ -58,7 +58,7 @@ public class MenuManager : MonoBehaviour {
 		Debug.Log("Chartboostcaching @Menumanager");
 
 #elif UNITY_ANDROID
-		GoogleMobileAdsDemoScript._instance.RequestInterstitial ();
+
 #endif
 		Application.targetFrameRate = 120;
 		AchievementChild.check_claim = (PlayerPrefs.GetInt("claimvalue"));
@@ -212,7 +212,7 @@ public class MenuManager : MonoBehaviour {
 
 #if UNITY_ANDROID
 
-		GoogleMobileAdsDemoScript._instance.ShowInterstitial ();
+
 		#elif UNITY_IOS || UNITY_IPHONE
 		if (Chartboost.hasInterstitial (CBLocation.Default))
 		{
@@ -234,17 +234,7 @@ public class MenuManager : MonoBehaviour {
 
 	public void Upgrades()
 	{
-#if UNITY_ANDROID
-		GoogleMobileAdsDemoScript.bannerWasLoaded=true;
-		if (!onceRequestBanner) {
-			onceRequestBanner = true;
-			GoogleMobileAdsDemoScript._instance.RequestBanner ();
-		}
-		else {
-			if(GoogleMobileAdsDemoScript.bannerWasLoaded)
-				GoogleMobileAdsDemoScript._instance.bannerView.Show ();
-		}
-#endif
+
 		GameObject upgradePanel = ( GameObject )Instantiate(Resources.Load ("UpgradePanel"));
 		upgradePanel.transform.SetParent(transform,false);
 		upgradePanel.transform.localScale = Vector3.one;
@@ -266,18 +256,7 @@ public class MenuManager : MonoBehaviour {
 	}
 	public void Achievments()
 	{
-		#if UNITY_ANDROID
 
-		GoogleMobileAdsDemoScript.bannerWasLoaded=true;
-		if (!onceRequestBanner) {
-			onceRequestBanner = true;
-			GoogleMobileAdsDemoScript._instance.RequestBanner ();
-		}
-		else {
-			if(GoogleMobileAdsDemoScript.bannerWasLoaded)
-				GoogleMobileAdsDemoScript._instance.bannerView.Show ();
-		}
-#endif
 		GameObject upgradePanel = ( GameObject )Instantiate(Resources.Load ("AchievementsPanel"));
 		upgradePanel.transform.SetParent(transform,false);
 		upgradePanel.transform.localScale = Vector3.one;
@@ -404,18 +383,7 @@ public class MenuManager : MonoBehaviour {
 	}
 	public GameObject GeneratePopupPanel()
 	{
-#if UNITY_ANDROID
 
-		GoogleMobileAdsDemoScript.bannerWasLoaded=true;
-		if (!onceRequestBanner) {
-			onceRequestBanner = true;
-			GoogleMobileAdsDemoScript._instance.RequestBanner ();
-		}
-		else {
-			if(GoogleMobileAdsDemoScript.bannerWasLoaded)
-				GoogleMobileAdsDemoScript._instance.bannerView.Show ();
-		}
-#endif
 		GameObject popupPanel2 = ( GameObject )Instantiate(Resources.Load ("EqPopupPanel"));
 		popupPanel2.transform.SetParent(transform.parent,false);
 		//popupPanel.transform.localScale = Vector3.one;

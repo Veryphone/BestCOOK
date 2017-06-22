@@ -15,11 +15,7 @@ public class Pause : MonoBehaviour {
 	}
 	public  void MenuPanel()
 	{
-#if UNITY_ANDROID
-		if (GoogleMobileAdsDemoScript.bannerWasLoaded) {
-			GoogleMobileAdsDemoScript._instance.bannerView.Hide ();
-		}
-#endif
+
 		GameObject upgradePanel = (GameObject)Instantiate (Resources.Load ("EnvPanel"));
 		upgradePanel.transform.SetParent (transform, false);
 		upgradePanel.transform.localScale = Vector3.one;
@@ -29,22 +25,14 @@ public class Pause : MonoBehaviour {
 	}
 	public void Restart()
 	{
-#if UNITY_ANDROID
-		if (GoogleMobileAdsDemoScript.bannerWasLoaded) {
-			GoogleMobileAdsDemoScript._instance.bannerView.Hide ();
-		}
-#endif
+
 		Time.timeScale = 1;
 		Application.LoadLevel(Application.loadedLevel);
 	}
 
 	public void Resume()
 	{
-#if UNITY_ANDROID
-		if (GoogleMobileAdsDemoScript.bannerWasLoaded) {
-			GoogleMobileAdsDemoScript._instance.bannerView.Hide ();
-		}
-#endif
+
 		Time.timeScale = 1;
 	//	Debug.Log (Time.timeScale);
 		Invoke ("ForDestroy", 0.1f);

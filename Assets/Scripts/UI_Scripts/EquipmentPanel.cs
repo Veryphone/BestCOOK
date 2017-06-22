@@ -106,13 +106,7 @@ public class EquipmentPanel : MonoBehaviour {
 
 	public void Close()
 	{
-#if UNITY_ANDROID
-		GoogleMobileAdsDemoScript.bannerWasLoaded=true;
-		
-		if (GoogleMobileAdsDemoScript.bannerWasLoaded) {
-			GoogleMobileAdsDemoScript._instance.bannerView.Show ();
-		}
-#endif
+
 		GameObject upgradePanel = ( GameObject )Instantiate(Resources.Load ("UpgradePanel"));
 		upgradePanel.transform.SetParent(transform.parent,false);
 		upgradePanel.transform.localScale = Vector3.one;

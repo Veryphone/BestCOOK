@@ -23,11 +23,7 @@ public class AchievementsPanel : MonoBehaviour {
 
 	public void Close()
 	{
-#if UNITY_ANDROID
-		if (GoogleMobileAdsDemoScript.bannerWasLoaded) {
-			GoogleMobileAdsDemoScript._instance.bannerView.Hide ();
-		}
-#endif
+
 		if(MenuManager._instance != null)
 			MenuManager._instance.EnableFadePanel ();
 		else

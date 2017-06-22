@@ -121,11 +121,7 @@ public class UIManager : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		_instance = this;
-		#if UNITY_ANDROID
 
-		if(GoogleMobileAdsDemoScript._instance != null)
-			GoogleMobileAdsDemoScript._instance.RequestInterstitial ();
-#endif
 		//PlayerPrefs.DeleteAll ();
 		if(!PlayerPrefs.HasKey ("PlateUpgrade"))
 		{
@@ -270,7 +266,7 @@ void Start()
 			if(adshow==2)
 			{
 #if UNITY_ANDROID
-				GoogleMobileAdsDemoScript._instance.ShowInterstitial();
+
 				#elif UNITY_IOS || UNITY_IPHONE
 				if (Chartboost.hasInterstitial (CBLocation.Default))
 				{
@@ -316,7 +312,7 @@ void Start()
 				}
 #elif UNITY_ANDROID
 
-				GoogleMobileAdsDemoScript._instance.ShowInterstitial();
+
 #endif
 				adshow=0;
 			}
@@ -464,11 +460,7 @@ void Start()
 
 	public void MainMenu()
 	{
-#if UNITY_ANDROID
-		if (GoogleMobileAdsDemoScript.bannerWasLoaded) {
-			GoogleMobileAdsDemoScript._instance.bannerView.Hide ();
-		}
-#endif
+
 		Time.timeScale = 1;
 		gameover_effect.SetActive(false);
 		loader.SetActive (true);
@@ -600,18 +592,7 @@ void Start()
 	public static bool onceRequestBanner;
 	public void PausePanel()
 	{
-		#if UNITY_ANDROID
 
-		GoogleMobileAdsDemoScript.bannerWasLoaded=true;
-		if (!onceRequestBanner) {
-			onceRequestBanner = true;
-			GoogleMobileAdsDemoScript._instance.RequestBanner ();
-		}
-		else {
-			if(GoogleMobileAdsDemoScript.bannerWasLoaded)
-				GoogleMobileAdsDemoScript._instance.bannerView.Show ();
-		}
-#endif
 		Pausepanel.SetActive (true);
 		//EnableFadePanel ();
 		Time.timeScale =0;
@@ -621,12 +602,7 @@ void Start()
 
 	public void Resume()
 	{
-		#if UNITY_ANDROID
 
-		if (GoogleMobileAdsDemoScript.bannerWasLoaded) {
-			GoogleMobileAdsDemoScript._instance.bannerView.Hide ();
-		}
-#endif
 		Time.timeScale = 1;
 
 		Pausepanel.SetActive (false);

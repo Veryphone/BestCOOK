@@ -70,13 +70,7 @@ public class GoldPanel : MonoBehaviour {
 //	}
 	public void Cross()
 	{
-#if UNITY_ANDROID
-		GoogleMobileAdsDemoScript.bannerWasLoaded=true;
 
-			if (GoogleMobileAdsDemoScript.bannerWasLoaded) {
-			GoogleMobileAdsDemoScript._instance.bannerView.Show ();
-		}
-#endif
 		if (UIManager._instance == null) {
 			GameObject upgradePanel = null;
 

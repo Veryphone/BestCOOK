@@ -100,19 +100,7 @@ public class UpgradePanel : MonoBehaviour {
 	}
 	public void GoldPanel()
 	{
-		#if UNITY_ANDROID
 
-		GoogleMobileAdsDemoScript.bannerWasLoaded=true;
-		
-		if (!MenuManager.onceRequestBanner) {
-			MenuManager.onceRequestBanner = true;
-			GoogleMobileAdsDemoScript._instance.RequestBanner ();
-		}
-		else {
-			if(GoogleMobileAdsDemoScript.bannerWasLoaded)
-				GoogleMobileAdsDemoScript._instance.bannerView.Show ();
-		}
-#endif
 		GameObject specialPanel = ( GameObject )Instantiate(Resources.Load ("GoldPanel"));
 		specialPanel.transform.SetParent(transform.parent,false);
 		specialPanel.transform.localScale = Vector3.one;
@@ -127,18 +115,7 @@ public class UpgradePanel : MonoBehaviour {
 
 	public void EquipmentPanel()
 	{
-		#if UNITY_ANDROID
-		GoogleMobileAdsDemoScript.bannerWasLoaded=true;
-		
-		if (!MenuManager.onceRequestBanner) {
-			MenuManager.onceRequestBanner = true;
-			GoogleMobileAdsDemoScript._instance.RequestBanner ();
-		}
-		else {
-			if(GoogleMobileAdsDemoScript.bannerWasLoaded)
-				GoogleMobileAdsDemoScript._instance.bannerView.Show ();
-		}
-#endif
+
 		GameObject upgradePanel = ( GameObject )Instantiate(Resources.Load ("EquipmentUpdrade"));
 		upgradePanel.transform.SetParent(transform.parent,false);
 		upgradePanel.transform.localScale = Vector3.one;
@@ -152,18 +129,7 @@ public class UpgradePanel : MonoBehaviour {
 
 	public void SpecialPanel()
 	{
-#if UNITY_ANDROID
-		GoogleMobileAdsDemoScript.bannerWasLoaded=true;
 
-		if (!MenuManager.onceRequestBanner) {
-			MenuManager.onceRequestBanner = true;
-			GoogleMobileAdsDemoScript._instance.RequestBanner ();
-		}
-		else {
-			if(GoogleMobileAdsDemoScript.bannerWasLoaded)
-				GoogleMobileAdsDemoScript._instance.bannerView.Show ();
-		}
-#endif
 		GameObject specialPanel = ( GameObject )Instantiate(Resources.Load ("SpecialPanel"));
 		specialPanel.transform.SetParent(transform.parent,false);
 		specialPanel.transform.localScale = Vector3.one;
@@ -177,11 +143,7 @@ public class UpgradePanel : MonoBehaviour {
 
 	public void DecorationlPanel()
 	{
-#if UNITY_ANDROID
-		if (GoogleMobileAdsDemoScript.bannerWasLoaded) {
-			GoogleMobileAdsDemoScript._instance.bannerView.Hide ();
-		}
-#endif
+
 		GameObject decorationPanel = ( GameObject )Instantiate(Resources.Load ("DecorationPanel"));
 		decorationPanel.transform.SetParent(transform.parent,false);
 		decorationPanel.transform.localScale = Vector3.one;
@@ -195,11 +157,7 @@ public class UpgradePanel : MonoBehaviour {
 
 	public void Close()
 	{
-#if UNITY_ANDROID
-		if (GoogleMobileAdsDemoScript.bannerWasLoaded) {
-			GoogleMobileAdsDemoScript._instance.bannerView.Hide ();
-		}
-#endif
+
 		if(MenuManager._instance != null)
 			MenuManager._instance.EnableFadePanel ();
 		else
