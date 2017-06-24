@@ -119,7 +119,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: com.cookingmania.letscook
+  bundleIdentifier: fr.veryphone.bestcookfoot
   bundleVersion: 1.1
   preloadedAssets: []
   metroInputSource: 0
@@ -206,7 +206,7 @@ PlayerSettings:
   appleEnableAutomaticSigning: 0
   AndroidTargetDevice: 3
   AndroidSplashScreenScale: 2
-  androidSplashScreen: {fileID: 2800000, guid: 200a62d24222c40869faaee10c4df298, type: 3}
+  androidSplashScreen: {fileID: 2800000, guid: 21e8ebb7814a87b4b8e95e932989e36b, type: 3}
   AndroidKeystoreName: C:/Users/Paoilo/Documents/GitHub/Veryphone.jks.keystore
   AndroidKeyaliasName: veryphone
   AndroidTVCompatibility: 1
